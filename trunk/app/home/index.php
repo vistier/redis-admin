@@ -36,21 +36,23 @@
 <input type="hidden" name="host" value="localhost" />
 <div id="widget" style="margin: 0 auto; width: 280px;">
 	<h1>Login</h1>
-	<p>
-		<label><strong>Username:</strong></label>
-		<span><input type="text" name="user" width="20" /></span>
-	</p>
+	<div>
+		<div class="left"><strong>Username:</strong></div>
+		<div class="right"><input type="text" name="user" width="20" /></div>
+		<div class="clear"></div>
+	</div>
 	
-	<p>
-		<label><strong>Password:</strong></label>
-		<span><input type="password" name="pass" width="20" /></span>
-	</p>
+	<div>
+		<div class="left"><strong>Password:</strong></div>
+		<div class="right"><input type="password" name="pass" width="20" /></div>
+		<div class="clear"></div>
+	</div>
 
-	<p>
-		<label>&nbsp;</label>	
-		<span><input type="submit" value="Connect" /></span>
-	</p>
-	
+	<div>
+		<div class="left"></div>
+		<div class="right"><input type="submit" value="Connect" /></div>
+		<div class="clear"></div>
+	</div>	
 	<div>&nbsp;</div>
 </div>
 </form>
