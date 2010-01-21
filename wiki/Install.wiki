@@ -22,8 +22,8 @@ You'll need a few directives to get going, a simple configuration may look like 
 
 {{{
 /* set redis variables */
-$DB->host = "localhost";
-$DB->port = "6379";	
+$config['redis']['host'] = "localhost";
+$config['redis']['port'] = "6379";	
 
 /* default admin variables */			
 $config['admin']['user'] = "username";
