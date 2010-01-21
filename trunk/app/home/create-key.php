@@ -19,7 +19,7 @@
 									
 		<form action="" method="post">
 		<input type="hidden" name="command" value="create_key" />
-		<input type="hidden" name="type" value="key" />			
+		<input type="hidden" name="type" value="string" />			
 		<div id="widget">
 			<h1>Create New Key</h1>
 			<table>
