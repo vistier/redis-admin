@@ -1,5 +1,5 @@
 * Known limitations *
 
-_1.1 Can I use any Sorted Keys commands?_
+_1.1 Can I use any Sorted Sets commands?_
 
 No, Sorted Sets is not supported yet.
