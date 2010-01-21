@@ -3,6 +3,7 @@
 A web server, with Rewrite module, is needed to install ReAdmin on (e.g., Apache, IIS etc.) 
 
 * .htaccess Rule *
+
 This module provides a rule-based rewriting engine to rewrite requested URLs on the fly.
 
 {{{
