@@ -20,14 +20,16 @@ class Redis {
     public $port;
     private $_sock;
 
+    /* changed by searle oliveira */
     public function __construct(){}
     
+    /* changed by searle oliveira */
     public function connect() {
      
-     	global $config;
+     	global $config; // changed by searle oliveira;
      	
-		$this->host	= $config['redis']['host'];
-		$this->port	= $config['redis']['port'];
+		$this->host	= $config['redis']['host']; // changed by searle oliveira;
+		$this->port	= $config['redis']['port']; // changed by searle oliveira;
 	     
         if ($this->_sock) return;
         if ($sock = fsockopen($this->host, $this->port, $errno, $errstr)) {
@@ -273,6 +275,15 @@ class Redis {
         $this->write("LASTSAVE\r\n");
         return $this->get_response();
     }
+    
+    /* changed by searle oliveira */
+    public function flushdb($all) {
+        $this->connect();
+        $this->select_db($all);
+        // $this->write($all ? "FLUSHALL\r\n" : "FLUSHDB\r\n");        
+        $this->write("FLUSHDB\r\n");
+        return $this->get_response();
+    }   
 
     public function flushall() {
         return $this->flush(true);
@@ -315,7 +326,7 @@ class Redis {
         $data = substr($data, 1);
         switch ($c) {
             case '-':
-                //trigger_error($data, E_USER_ERROR); *** CHANGED BY SEARLE ***
+                //trigger_error($data, E_USER_ERROR); *** changed by searle oliveira ***
                 return $data.".";
                 break;
             case '+':
@@ -362,32 +373,28 @@ class Redis {
         return $buffer;
     }
     
- 	/* changed by searle */   
-    public function flushdb($all) {
-        $this->connect();
-        $this->select_db($all);
-        $this->write("FLUSHDB\r\n");
-        return $this->get_response();
-    }
-
+ 	/* added by searle */   
     public function type($key) {
         $this->connect();
         $this->write("TYPE $key\r\n");
         return $this->get_response();
     }
 	    
+ 	/* added by searle */   	    
     public function zadd($key, $score, $member) {
         $this->connect();
         $this->write("ZADD $key $score $member\r\n");
         return $this->get_response();
     }    
 
+ 	/* added by searle */   
     public function zcard($name) {
         $this->connect();
         $this->write("ZCARD $name\r\n");
         return $this->get_response();
     }    
     
+ 	/* added by searle */       
     public function command($cmd) {
         $this->connect();
         $this->write("$cmd\r\n");
