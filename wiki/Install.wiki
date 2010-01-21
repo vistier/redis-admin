@@ -21,6 +21,10 @@ Simply use a plain text editor to edit a file named config.php in the main (top-
 You'll need a few directives to get going, a simple configuration may look like this:
 
 {{{
+/* set redis variables */
+$DB->host = "localhost";
+$DB->port = "6379";	
+
 /* default admin variables */			
 $config['admin']['user'] = "username";
 $config['admin']['pass'] = "password";
