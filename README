@@ -1,0 +1,21 @@
+* ReAdmin 0.0.2 *
+
+Redis Admin, or ReAdmin, is a open source web interface to the Administration of Redis. ReAdmin is fully written in PHP using Redis, of course. See the Google Code page project in [http://code.google.com/p/redis-admin].
+
+* What is Redis? *
+
+Redis is an advanced key-value store. It is similar to memcached but the dataset is not volatile, and values can be strings, exactly like in memcached, but also lists, sets, and ordered sets. All this data types can be manipulated with atomic operations to push/pop elements, add/remove elements, perform server side union, intersection, difference between sets, and so forth. Redis supports different kind of sorting abilities. See the Google Code page project in [http://code.google.com/p/redis].
+
+* Version 0.0.2 Stable/Test *
+This version supports configuration of Redis Hostname and Port number by config.php file.
+
+* Version 0.0.1 Stable/Test *
+This version supports create schemas, create keys, lists and sets only. Sorted sets is not supported yet. Supports persistence control, command query editor and a server status on dashboard.
+
+* Simple configuration *
+Just configure the config.php file and set the config variables.
+
+* Contact *
+If you are using ReAdmin, please tell me. Searle Oliveira <contato@searle.com.br>
+
+Thanks!
