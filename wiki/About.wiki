@@ -2,4 +2,4 @@ ReAdmin is a tool written in PHP intended to handle the administration of Redis 
 
 * Live Demo *
 
-The best way to see Redis Admin in action is to try it on our [http://readmin.searle.com.br Live Demo] server, where you have full control on Redis. The default login is *admin* with *redis* password.
+The best way to see Redis Admin in action is to try it on our [http://readmin.searle.com.br Live Demo] server, where you have control on Redis. The default login is *admin* with *redis* password.
