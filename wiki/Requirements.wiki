@@ -1,0 +1,15 @@
+* Web Server *
+
+A web server, with Rewrite module, is needed to install ReAdmin on (e.g., Apache, IIS etc.) 
+
+* PHP *
+
+Up to PHP 5.2.0 with the Standard PHP Library (SPL) extension enabled.
+
+* Redis *
+
+Redis 1.2.0 or newer ([http://code.google.com/p/redis/ details]) 
+
+* Web browser *
+
+Any web browser with cookies enabled.
