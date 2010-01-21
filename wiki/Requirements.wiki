@@ -5,13 +5,13 @@ A web server, with Rewrite module, is needed to install ReAdmin on (e.g., Apache
 * .htaccess Rule *
 This module provides a rule-based rewriting engine to rewrite requested URLs on the fly.
 
-_<IfModule mod_rewrite.c>
+_{{{<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-</IfModule>_
+</IfModule>}}}_
 
 * PHP *
 
