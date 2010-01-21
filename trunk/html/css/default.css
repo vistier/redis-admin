@@ -1,0 +1,163 @@
+/* Essentials */
+body { 
+	font-family: 	arial; 
+	font-size: 		12px; 
+	margin: 		0;	
+	padding: 		0; 
+	width: 			100%; 
+}
+
+a { 
+ 	color: #000080;
+  	text-decoration: none; 
+}
+
+a:hover { 
+ 	color: #000080;
+ 	text-decoration: underline; 
+}
+
+form, h1, img, p, ul, li { 
+	border: 			0; 
+ 	list-style-type: 	none; 	
+	margin: 			0; 	
+	padding: 			0; 
+}
+
+#footer {
+  	border-top: 	1px dotted #CCCCCC;
+ 	margin: 		0 auto;
+ 	padding:		20px 0;
+	width: 			100%;
+	text-align: 	center;
+}
+
+#header {
+  	border-bottom: 	1px dotted #CCCCCC;
+	height: 		80px;	
+	padding: 		0 10px;
+	margin: 		0;
+}
+
+#logintitle {
+	font-size: 		14px; 
+	font-weight: 	bold; 
+ 	margin: 		10px auto;
+	padding: 		5px;
+	width: 			280px;	 
+	text-align: 	center;
+}
+
+#widget {
+ 	background: url('../images/gradiente.jpg') repeat-x;
+ 	border: 	1px dotted #CCC;
+	padding: 	5px;	 
+}
+
+#widget h1 {
+ 	border-bottom: 	1px dotted #CCCCCC;
+	font-size: 		16px;
+	padding: 		5px;
+	margin: 		0px;	
+}
+
+#widget p {
+	padding: 	10px;	
+}
+
+#widget span {
+	float: 		right;
+}
+
+#content {
+	padding: 	10px;
+}
+
+#menu {
+	background: 	url('../images/gradiente.jpg') repeat-x;
+	border-right: 	1px dotted #CCCCCC;
+	padding: 		10px;
+	height:			100%;
+	width: 			130px;
+}
+
+#menu h1 {
+	font-size: 		14px;	
+	padding: 		0;
+	margin: 		0;	
+}
+
+#menu ul, li {
+	margin: 		5px;
+}
+
+#menu a {
+	font-size: 		11px;
+}
+
+#submenu {
+ 	font-size: 		11px;
+ 	padding: 		0 5px;
+}
+
+#submenu a {
+	color: 			#000000;
+	padding: 		5px 10px;	
+}
+
+#submenu a:hover {
+	background: 		#EEEEEE;
+	padding: 			5px 10px;
+	text-decoration: 	none;	
+}
+
+#table {
+ 	background: 	#FFFFFF url('../images/gradiente.jpg') repeat-x;
+ 	border: 		1px dotted #CCC;
+	padding: 		2px;
+}
+
+#table tr { 
+ 	background: 	#EEEEEE; 
+	padding: 		2px; 
+	margin: 		2px; 
+}
+
+#table tr:hover { 
+ 	background: 	#E5E5E5; 
+}
+
+#table a {
+ 	text-decoration:	none;
+}
+
+#table td { 
+ 	padding: 		2px 5px; 
+	margin: 		0; 
+}
+
+
+.left { 
+ 	float: 		left; 
+}
+
+.right { 
+ 	float: 		right; 
+}
+
+.clear { 
+ 	clear: 		both; 
+}
+
+.center { 
+ 	text-align: center; 
+}
+
+.bold {
+	font-weight:	bold;	
+}
+
+.odd {
+	background: 	#EEEEEE;
+	padding: 		5px 10px;
+}
