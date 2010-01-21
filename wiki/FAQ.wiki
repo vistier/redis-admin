@@ -1,1 +1,5 @@
-No questions here.
+* Known limitations *
+
+_1.1 Can´t I use any Sorted Sets commands?_
+
+No, Sorted Sets is not supported yet.
