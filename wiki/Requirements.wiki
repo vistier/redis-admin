@@ -4,7 +4,7 @@ A web server, with Rewrite module, is needed to install ReAdmin on (e.g., Apache
 
 * PHP *
 
-Up to PHP 5.2.0 with the Standard PHP Library (SPL) extension enabled.
+PHP 5.2.0, or newer, with the Standard PHP Library (SPL) extension enabled.
 
 * Redis *
 
