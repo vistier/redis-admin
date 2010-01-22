@@ -1,4 +1,7 @@
 <?php
+	/* verify session */
+	$ROUTER->getSecurity($LINK->getLink('logout'));
+	
 	$get = $DB->Request('get');
 	if(empty($get['pattern'])){
 		$pattern	=	"all";

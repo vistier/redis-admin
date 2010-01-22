@@ -1,4 +1,6 @@
 <?php
+	/* verify session */
+	$ROUTER->getSecurity($LINK->getLink('logout'));
 ?>
 <?php $VARS['meta_title'] 	= "Help"; ?>
 <?php $VARS['header'] 		= true; ?>
