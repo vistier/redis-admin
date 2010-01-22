@@ -13,3 +13,7 @@ The DB instances, in Redis, are limited to numbers because they are just an acce
 _2.1 Sorted Sets commands_
 
 Sorted Sets is not supported yet.
+
+_2.2 DB instances_
+
+Only 15 DB instances (from 0 to 14) can be created.
