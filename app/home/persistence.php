@@ -15,17 +15,17 @@
 
 <td id="content" valign="top">
 
-	<h1>Persistence</h1>
+	<div class="widget_title">Persistence</div>
 		
 	<div class="left" style="margin: 5px;">
 		<form action="" method="post" name="formSave">
 		<input type="hidden" name="command" value="save" />
-			<div id="widget">
-				<h1>SAVE</h1>
-				<p>
-					<label>Save the DB on disk.</label>
-					<span><input type="submit" value="Save" /></span>
-				</p>
+			<div id="widget_1" class="widget">
+				<div class="widget_title">SAVE</div>
+				<div class="row">
+					<div class="left">Save the DB on disk.</div>
+					<div class="right"><input type="submit" value="Save" /></div>
+				</div>
 				<div style="margin: 4px;"></div>
 			</div>		
 		</form>	
@@ -34,12 +34,12 @@
 
 		<form action="" method="post" name="formBgsave">
 		<input type="hidden" name="command" value="bgsave" />
-			<div id="widget">
-				<h1>BGSAVE</h1>
-				<p>
-					<label>Save the DB in background. &nbsp;</label>
-					<span><input type="submit" value="Save" /></span>
-				</p>
+			<div id="widget_2" class="widget">
+				<div class="widget_title">BGSAVE</div>
+				<div class="row">
+					<div class="left">Save the DB in background. &nbsp;</div>
+					<div class="right"><input type="submit" value="Save" /></div>
+				</div>
 				<div style="margin: 4px;"></div>
 			</div>		
 		</form>			

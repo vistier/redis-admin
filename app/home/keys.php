@@ -69,7 +69,6 @@
 		</form>	
 		
 	</div>
-	
 	<div class="clear"></div>	
 	
 </td>

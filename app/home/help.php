@@ -7,19 +7,18 @@
 
 <td id="content" valign="top">
 
-	<h1>Help</h1>
+	<div class="widget_title">Help</div>
 	
 	<div class="left" style="margin: 5px; width: 300px;">	
 									
 		<form action="" method="post">
 		<input type="hidden" name="command" value="create_schema" />
-		<div id="widget">
+		<div id="widget_1" class="widget">
 			<div>Not yet.</div>
 		</div>
 		</form>	
 		
 	</div>
-	
 	<div class="clear"></div>	
 	
 </td>

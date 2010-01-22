@@ -12,143 +12,152 @@
 
 <td id="content" valign="top">
 
-	<div class="left" style="margin: 5px;">
+	<div id="column_left">
 	
 		<form action="" method="post">
 		<input type="hidden" name="command" value="create_schema" />
-		<div id="widget">
-			<h1>Create New Schema</h1>
-			<p>
-				<label><strong>Schema: &nbsp;</strong></label>
-				<span><input type="text" name="schema" maxlength="30" width="20" />
-				<input type="submit" value="Create" /></span>
-			</p>
+		<div id="widget_1" class="widget">
+			<div class="widget_title">Create New Schema</div>
+			<div class="row">
+				<div class="left"><strong>Schema: &nbsp;</strong></div>
+				<div class="right"><span><input type="text" name="schema" maxlength="30" width="20" />
+				<input type="submit" value="Create" /></div>
+				<div class="clear"></div>
+			</div>
 			<div style="margin: 4px;"></div>
 		</div>
 		</form>	
 	
 		<br />
 		
-		<div id="widget">
-			<h1>Uptime</h1>
-			<p style="padding: 5px;">
-				<label><strong>Uptime in Minutes:</strong></label>
-				<span><?php echo ceil(($VARS['info']['uptime_in_seconds'])/60); ?></span>
-			</p>
+		<div id="widget_2" class="widget">
+			<div class="widget_title">Uptime</div>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Uptime in Minutes:</strong></div>
+				<div class="right"><?php echo ceil(($VARS['info']['uptime_in_seconds'])/60); ?></div>
+				<div class="clear"></div>
+			</div>
 			
-			<p style="padding: 5px;">
-				<label><strong>Uptime in Days:</strong></label>
-				<span><?php echo $VARS['info']['uptime_in_days']; ?></span>
-			</p>															
+			<div style="padding: 5px;">
+				<div class="left"><strong>Uptime in Days:</strong></div>
+				<div class="right"><?php echo $VARS['info']['uptime_in_days']; ?></div>
+				<div class="clear"></div>
+			</div>															
 		</div>
 	
 		<br />
 		
-		<div id="widget">
-			<h1>Connections</h1>
-			<p style="padding: 5px;">
-				<label><strong>Connected Clients:</strong></label>
-				<span><?php echo $VARS['info']['connected_clients']; ?></span>
-			</p>
-
+		<div id="widget_3" class="widget">
+			<div class="widget_title">Connections</div>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Connected Clients:</strong></div>
+				<div class="right"><?php echo $VARS['info']['connected_clients']; ?></div>
+				<div class="clear"></div>
+			</div>
 			
-			<p style="padding: 5px;">
-				<label><strong>Total Connections Received:</strong></label>
-				<span><?php echo numformat($VARS['info']['total_connections_received']); ?></span>
-			</p>
-																												
+			<div style="padding: 5px;">
+				<div class="left"><strong>Total Connections Received:</strong></div>
+				<div class="right"><?php echo numformat($VARS['info']['total_connections_received']); ?></div>
+				<div class="clear"></div>
+			</div>																												
 		</div>	
 		
 		<br />	
 				
-		<div id="widget">
-			<h1>Replication</h1>
-						
-			<p style="padding: 5px;">
-				<label><strong>Role:</strong></label>
-				<span><?php echo $VARS['info']['role']; ?></span>
-			</p>						
+		<div id="widget_4" class="widget">
+			<div class="widget_title">Replication</div>						
+			<div style="padding: 5px;">
+				<div class="left"><strong>Role:</strong></div>
+				<div class="right"><?php echo $VARS['info']['role']; ?></div>
+				<div class="clear"></div>
+			</div>						
 		
-			<p style="padding: 5px;">
-				<label><strong>Connect Slaves:</strong></label>
-				<span><?php echo $VARS['info']['connected_slaves']; ?></span>
-			</p>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Connect Slaves:</strong></div>
+				<div class="right"><?php echo $VARS['info']['connected_slaves']; ?></div>
+				<div class="clear"></div>				
+			</div>
 																											
 		</div>
 		
 	</div>
 	
-	<div class="left" style="margin: 5px; width: 300px;">	
-		<div id="widget">
-			<h1>Info</h1>
-			<p style="padding: 5px;">
-				<label><strong>Redis Version:</strong></label>
-				<span><?php echo $VARS['info']['redis_version']; ?></span>
-			</p>
+	<div id="column_right">	
+	
+		<div id="widget_5" class="widget">
+			<div class="widget_title">Info</div>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Redis Version:</strong></div>
+				<div class="right"><?php echo $VARS['info']['redis_version']; ?></div>
+				<div class="clear"></div>
+			</div>
 			
-			<p style="padding: 5px;">
-				<label><strong>Redis Admin Version:</strong></label>
-				<span><?php echo '0.0.2' ?></span>
-			</p>		
+			<div style="padding: 5px;">
+				<div class="left"><strong>Redis Admin Version:</strong></div>
+				<div class="right"><?php echo '0.0.3' ?></div>
+				<div class="clear"></div>
+			</div>		
 	
-			<p style="padding: 5px;">
-				<label><strong>Arch Bits:</strong></label>
-				<span><?php echo $VARS['info']['arch_bits']; ?></span>
-			</p>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Arch Bits:</strong></div>
+				<div class="right"><?php echo $VARS['info']['arch_bits']; ?></div>
+				<div class="clear"></div>
+			</div>
 	
-			<p style="padding: 5px;">
-				<label><strong>Multiplexing API:</strong></label>
-				<span><?php echo $VARS['info']['multiplexing_api']; ?></span>
-			</p>
-																												
+			<div style="padding: 5px;">
+				<div class="left"><strong>Multiplexing API:</strong></div>
+				<div class="right"><?php echo $VARS['info']['multiplexing_api']; ?></div>
+				<div class="clear"></div>
+			</div>																												
 		</div>
 
 		<br />	
 
-		<div id="widget">
-			<h1>Status</h1>			
-			<p style="padding: 5px;">
-				<label><strong>Used Memory:</strong></label>
-				<span><?php echo getSize($VARS['info']['used_memory']); ?></span>
-			</p>
+		<div id="widget_6" class="widget">
+			<div class="widget_title">Status</div>			
+			<div style="padding: 5px;">
+				<div class="left"><strong>Used Memory:</strong></div>
+				<div class="right"><?php echo getSize($VARS['info']['used_memory']); ?></div>
+				<div class="clear"></div>				
+			</div>
 					
-			<p style="padding: 5px;">
-				<label><strong>Total Commands Processed:</strong></label>
-				<span><?php echo numformat($VARS['info']['total_commands_processed']); ?></span>
-			</p>
-																									
+			<div style="padding: 5px;">
+				<div class="left"><strong>Total Commands Processed:</strong></div>
+				<div class="right"><?php echo numformat($VARS['info']['total_commands_processed']); ?></div>
+				<div class="clear"></div>				
+			</div>																									
 		</div>
 
 		<br />	
 						
-		<div id="widget">
-			<h1>Persistence</h1>	
-			
-			<p style="padding: 5px;">
-				<label><strong>Last Save Time:</strong></label>
-				<span><?php echo date('Y-m-d H:i:s', $VARS['info']['last_save_time']); ?></span>
-			</p>
+		<div id="widget_7" class="widget">
+			<div class="widget_title">Persistence</div>				
+			<div style="padding: 5px;">
+				<div class="left"><strong>Last Save Time:</strong></div>
+				<div class="right"><?php echo date('Y-m-d H:i:s', $VARS['info']['last_save_time']); ?></div>
+				<div class="clear"></div>				
+			</div>
 								
-			<p style="padding: 5px;">
-				<label><strong>Changes Since Last Save:</strong></label>
-				<span><?php echo numformat($VARS['info']['changes_since_last_save']); ?></span>
-			</p>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Changes Since Last Save:</strong></div>
+				<div class="right"><?php echo numformat($VARS['info']['changes_since_last_save']); ?></div>
+				<div class="clear"></div>				
+			</div>
 	
-			<p style="padding: 5px;">
-				<label><strong>Bgsave in Progress:</strong></label>
-				<span><?php echo $VARS['info']['bgsave_in_progress']; ?></span>
-			</p>
+			<div style="padding: 5px;">
+				<div class="left"><strong>Bgsave in Progress:</strong></div>
+				<div class="right"><?php echo $VARS['info']['bgsave_in_progress']; ?></div>
+				<div class="clear"></div>				
+			</div>
 			
-			<p style="padding: 5px;">
-				<label><strong>Bgrewriteaof in Progress:</strong></label>
-				<span><?php echo $VARS['info']['bgrewriteaof_in_progress']; ?></span>
-			</p>
-																					
+			<div style="padding: 5px;">
+				<div class="left"><strong>Bgrewriteaof in Progress:</strong></div>
+				<div class="right"><?php echo $VARS['info']['bgrewriteaof_in_progress']; ?></div>
+				<div class="clear"></div>				
+			</div>															
 		</div>
 				
-		
 	</div>
-	
 	<div class="clear"></div>	
 	
 </td>

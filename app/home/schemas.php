@@ -14,7 +14,7 @@
 
 <td id="content" valign="top">
 
-	<h1>Schemas</h1>
+	<div class="widget_title">Schemas</div>
 		
 	<div class="left" style="margin: 5px;">
 	<form action="" method="post" name="form">

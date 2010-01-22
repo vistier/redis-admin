@@ -20,8 +20,8 @@
 		<form action="" method="post">
 		<input type="hidden" name="command" value="create_key" />
 		<input type="hidden" name="type" value="list" />			
-		<div id="widget">
-			<h1>Create New List</h1>
+		<div id="widget_1" class="widget">
+			<div class="widget_title">Create New List</div>
 			<table>
 				<tr>
 				<td width="100"><strong>Key: &nbsp;</strong></td>
@@ -39,8 +39,7 @@
 	
 		<br />
 		
-	</div>
-	
+	</div>	
 	<div class="clear"></div>	
 	
 </td>

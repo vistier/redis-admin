@@ -25,8 +25,7 @@
 ?>
 <?php $ROUTER->getInclude('header'); ?>
 
-
-<div id="logintitle">
+<div id="home_logo">
 	<p><img src="<?php echo $LINK->getLink('logo-s'); ?>" title="Redis Admin" alt="Redis Admin" /></p>
 </div>
 
@@ -34,21 +33,21 @@
 
 <form action="" method="post">
 <input type="hidden" name="host" value="localhost" />
-<div id="widget" style="margin: 0 auto; width: 280px;">
-	<h1>Login</h1>
-	<div>
+<div id="widget_1" class="widget" style="width: 300px;">
+	<div class="widget_title">Login</div>
+	<div class="row">
 		<div class="left"><strong>Username:</strong></div>
 		<div class="right"><input type="text" name="user" width="20" /></div>
 		<div class="clear"></div>
 	</div>
 	
-	<div>
+	<div class="row">
 		<div class="left"><strong>Password:</strong></div>
 		<div class="right"><input type="password" name="pass" width="20" /></div>
 		<div class="clear"></div>
 	</div>
 
-	<div>
+	<div class="row">
 		<div class="left"></div>
 		<div class="right"><input type="submit" value="Connect" /></div>
 		<div class="clear"></div>
