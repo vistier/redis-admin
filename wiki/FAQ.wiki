@@ -16,4 +16,4 @@ Sorted Sets is not supported yet.
 
 _2.2 DB instances_
 
-Only 15 DB instances (from 0 to 14) can be created. The DB15 instance is reserved to ReAdmin? info_schema.
+Only 15 DB instances (from 0 to 14) can be created. The DB15 instance is reserved to ReAdmin info_schema.
