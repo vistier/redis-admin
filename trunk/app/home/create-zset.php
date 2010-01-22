@@ -21,7 +21,7 @@
 		<input type="hidden" name="command" value="create_key" />
 		<input type="hidden" name="type" value="zset" />		
 		<div id="widget">
-			<h1>Create New Sorted Set</h1>
+			<div class="widget_title">Create New Sorted Set</div>
 			<table>
 				<tr>
 				<td width="100"><strong>Key: &nbsp;</strong></td>
@@ -44,7 +44,6 @@
 		<br />
 		
 	</div>
-	
 	<div class="clear"></div>	
 	
 </td>

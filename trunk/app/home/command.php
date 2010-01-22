@@ -22,12 +22,16 @@
 		<form action="" method="post">
 		<input type="hidden" name="action" value="command" />
 		<div id="widget">
-			<h1>Type Command</h1>
+			<div class="widget_title">Type Command</div>
 			<table>
 				<tr>
-				<td><input type="text" name="command" style="width: 300px;" />&nbsp;<input type="submit" value="Execute" /></td>
+				<td>
+					<input type="text" name="command" style="width: 300px;" />&nbsp;
+					<input type="submit" value="Execute" />
+				</td>
 				</tr>
-			</table>		
+			</table>	
+			<div class="info">&nbsp; * only read command, not write command.</div>	
 			<div class="clear" style="margin: 4px;"></div>
 		</div>
 		</form>	
@@ -36,7 +40,7 @@
 		
 		<?php if(!empty($returnValue)) {?>
 		<div id="widget">
-			<h1>Return value</h1>
+			<div class="widget_title">Return value</div>
 			<table>
 				<tr>
 				<td><pre><?php echo $returnValue; ?></pre></td>
