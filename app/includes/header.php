@@ -48,7 +48,8 @@
 
 <?php } ?>
 
-<table>
+<table id="wrap">
+
 <?php if( $VARS['menu'] ){ ?>
 
 <td id="menu" valign="top">
