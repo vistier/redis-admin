@@ -25,6 +25,8 @@
 ?>
 <?php $ROUTER->getInclude('header'); ?>
 
+</table>
+
 <div id="home_logo">
 	<img src="<?php echo $LINK->getLink('logo-s'); ?>" title="Redis Admin" alt="Redis Admin" />
 </div>
@@ -58,5 +60,7 @@
 <br />
 
 <style>#footer { border: 0; }</style>
+
+<table>
 
 <?php $ROUTER->getInclude('footer'); ?>
