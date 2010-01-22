@@ -1,9 +1,11 @@
-* Known limitations *
+* Schemas *
 
-_1.1 Can I use any Sorted Sets commands?_
-
-No, Sorted Sets is not supported yet.
-
-_1.2 What is Schemas?_
+_1.1 What is Schemas?_
 
 Redis do not use the Schemas concept. Redis uses DB instances (0, 1, 2, 3 ... 15). So, to organize this instances and make more easy for human, we created an alias to them. These alias are Schemas.
+
+* Known limitations *
+
+_2.1 Sorted Sets commands_
+
+Sorted Sets is not supported yet.
