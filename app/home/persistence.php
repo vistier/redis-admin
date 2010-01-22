@@ -25,6 +25,7 @@
 				<div class="row">
 					<div class="left">Save the DB on disk.</div>
 					<div class="right"><input type="submit" value="Save" /></div>
+					<div class="clear"></div>
 				</div>
 				<div style="margin: 4px;"></div>
 			</div>		
@@ -39,6 +40,7 @@
 				<div class="row">
 					<div class="left">Save the DB in background. &nbsp;</div>
 					<div class="right"><input type="submit" value="Save" /></div>
+					<div class="clear"></div>
 				</div>
 				<div style="margin: 4px;"></div>
 			</div>		
