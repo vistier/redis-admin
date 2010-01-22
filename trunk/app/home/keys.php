@@ -23,7 +23,7 @@
 
 <td id="content" valign="top">
 
-	<?php $ROUTER->getInclude('submenu'); ?>
+	<?php $ROUTER->getInclude('menu-key'); ?>
 	
 	<div class="left" style="margin: 10px 5px;">	
 									
