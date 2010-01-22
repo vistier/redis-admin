@@ -4,15 +4,15 @@
  *
  * Copyright 2009 Ludovico Magnocavallo
  * Copyright 2009 Salvatore Sanfilippo (ported it to PHP5, fixed some bug)
+ * Copyright 2010 Searle Oliveira (Added some methods, fixed some bug)
  * Released under the same license as Redis.
  *
- * Version: 0.1
+ * Version: 0.2
  *
- * $Revision: 139 $
+ * $Revision: 140 $
  * $Date: 2009-03-15 22:59:40 +0100 (Dom, 15 Mar 2009) $
  *
  ******************************************************************************/
-
 
 class Redis {
  
@@ -285,8 +285,12 @@ class Redis {
         return $this->get_response();
     }   
 
+    /* changed by searle oliveira */
     public function flushall() {
-        return $this->flush(true);
+        $this->connect();
+        // $this->write($all ? "FLUSHALL\r\n" : "FLUSHDB\r\n");        
+        $this->write("FLUSHALL\r\n");
+        return $this->get_response();
     }
     
     public function info() {

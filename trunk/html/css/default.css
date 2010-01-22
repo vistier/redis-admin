@@ -32,6 +32,18 @@ form, h1, img, p, ul, li {
 	text-align: 	center;
 }
 
+#column_left {
+ 	float: 			left;
+	margin: 		5px; 
+	width: 			320px;
+}
+
+#column_right {
+ 	float: 			left;
+	margin: 		5px; 
+	width: 			320px;
+}
+
 #header {
   	border-bottom: 	1px dotted #CCCCCC;
 	height: 		80px;	
@@ -39,9 +51,7 @@ form, h1, img, p, ul, li {
 	margin: 		0;
 }
 
-#logintitle {
-	font-size: 		14px; 
-	font-weight: 	bold; 
+#home_logo {
  	margin: 		10px auto;
 	padding: 		5px;
 	width: 			280px;	 
@@ -54,19 +64,12 @@ form, h1, img, p, ul, li {
 	padding: 	5px;	 
 }
 
-#widget h1 {
- 	border-bottom: 	1px dotted #CCCCCC;
-	font-size: 		16px;
-	padding: 		5px;
-	margin: 		0px;	
-}
-
-#widget p {
-	padding: 	10px;	
-}
-
 #widget span {
 	float: 		right;
+}
+
+#wrap {
+	margin: 	0; 
 }
 
 #content {
@@ -98,6 +101,7 @@ form, h1, img, p, ul, li {
 #submenu {
  	font-size: 		11px;
  	padding: 		0 5px;
+ 	margin: 		10px 0;
 }
 
 #submenu a {
@@ -136,6 +140,28 @@ form, h1, img, p, ul, li {
 	margin: 		0; 
 }
 
+.widget {
+ 	background: 	url('../images/gradiente.jpg') repeat-x;
+ 	border: 		1px dotted #CCC;
+	padding: 		5px; 
+	margin: 		0 auto; 
+}
+
+.widget_title {
+	font-size: 		18px;
+	font-weight:	bold;
+	padding: 		5px;
+	margin: 		0px;	
+}
+
+.info {
+ 	color: 			#000;
+	font-size:		10px;	
+}
+
+.row {
+	padding: 	10px;	
+}
 
 .left { 
  	float: 		left; 
