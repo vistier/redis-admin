@@ -22,10 +22,10 @@
 			if($link=="keys") return "/keys";						
 			if($link=="help") return "/help";		
 
-			if($link=="create-key") return "/create-key";		
-			if($link=="create-list") return "/create-list";		
-			if($link=="create-set") return "/create-set";		
-			if($link=="create-zset") return "/create-zset";		
+			if($link=="addkey-string") return "/addkey-string";		
+			if($link=="addkey-list") return "/addkey-list";		
+			if($link=="addkey-set") return "/addkey-set";		
+			if($link=="addkey-zset") return "/addkey-zset";		
 			if($link=="command") return "/command";
 																																	
 			if($link=="logout") return "/logout";										

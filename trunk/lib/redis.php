@@ -4,10 +4,10 @@
  *
  * Copyright 2009 Ludovico Magnocavallo
  * Copyright 2009 Salvatore Sanfilippo (ported it to PHP5, fixed some bug)
- * Copyright 2010 Searle Oliveira (Added some methods, fixed some bug)
+ * Copyright 2010 Searle Oliveira (Added some methods to ReAdmin and fixed some bug)
  * Released under the same license as Redis.
  *
- * Version: 0.2
+ * Version: 0.2 (ReAdmin)
  *
  * $Revision: 140 $
  * $Date: 2009-03-15 22:59:40 +0100 (Dom, 15 Mar 2009) $
@@ -32,15 +32,14 @@ class Redis {
 		$this->port	= $config['redis']['port']; // changed by searle oliveira;
 	     
         if ($this->_sock) return;
-        if ($sock = fsockopen($this->host, $this->port, $errno, $errstr)) {
+        if ($sock = @fsockopen($this->host, $this->port, $errno, $errstr)) {
             $this->_sock = $sock;
             return;
         }
-        $msg = "Cannot open socket to {$this->host}:{$this->port}";
-        if ($errno || $errmsg)
-            $msg .= "," . ($errno ? " error $errno" : "") .
-                            ($errmsg ? " $errmsg" : "");
-        trigger_error("$msg.", E_USER_ERROR);
+        $msg = "<h1>Unable to establish database connection</h1>";
+        // if ($errno || $errmsg) $msg .= "," . ($errno ? " error $errno" : "").($errmsg ? " $errmsg" : "");
+		// trigger_error("$msg.", E_USER_ERROR);
+		die($msg);
     }
     
     public function disconnect() {

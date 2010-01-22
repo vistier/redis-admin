@@ -19,14 +19,14 @@
 			exit(0);
 			
 		}else{
-			$VARS['error']="Access denied."; 
+			$VARS['error']="The username or password you entered is incorrect."; 
 		}
 	}
 ?>
 <?php $ROUTER->getInclude('header'); ?>
 
 <div id="home_logo">
-	<p><img src="<?php echo $LINK->getLink('logo-s'); ?>" title="Redis Admin" alt="Redis Admin" /></p>
+	<img src="<?php echo $LINK->getLink('logo-s'); ?>" title="Redis Admin" alt="Redis Admin" />
 </div>
 
 <?php if(!empty($VARS['error'])){ ?><div id="error"><?php echo $VARS['error']; ?></div><?php } ?>
@@ -52,11 +52,9 @@
 		<div class="right"><input type="submit" value="Connect" /></div>
 		<div class="clear"></div>
 	</div>	
-	<div>&nbsp;</div>
 </div>
 </form>
 
-<br />
 <br />
 
 <style>#footer { border: 0; }</style>

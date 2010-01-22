@@ -1,4 +1,7 @@
 <?php
+	/* verify session */
+	$ROUTER->getSecurity($LINK->getLink('logout'));
+	
 	if($_POST['command']=='save'){
 	 	$DB->save();
 		$VARS['command']="SAVE; OK;";

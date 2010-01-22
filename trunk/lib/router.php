@@ -31,6 +31,15 @@
 			else{ include($DIR.'app/home/404.php'); }
 		}		
 		
+		function getSecurity($redirect_to){
+			global $_SESSION;
+			if(empty($_SESSION['REDIS']['HOSTNAME'])){
+				header("HTTP/1.1 301 Moved Permanently"); 
+				header('location: '.$redirect_to);
+				exit(0);			 	
+			}	 
+		}
+	
 	}
 
 ?>

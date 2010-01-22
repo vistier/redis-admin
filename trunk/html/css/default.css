@@ -35,7 +35,7 @@ form, h1, img, p, ul, li {
 #column_left {
  	float: 			left;
 	margin: 		5px; 
-	width: 			320px;
+	width: 			360px;
 }
 
 #column_right {
@@ -44,6 +44,14 @@ form, h1, img, p, ul, li {
 	width: 			320px;
 }
 
+#error {
+ 	color:			#FF0000;
+ 	font-weight:	bold;
+	margin: 		10px auto;
+	width:			360px; 
+	text-align:		center;
+}
+ 
 #header {
   	border-bottom: 	1px dotted #CCCCCC;
 	height: 		80px;	

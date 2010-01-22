@@ -1,4 +1,7 @@
 <?php
+	/* verify session */
+	$ROUTER->getSecurity($LINK->getLink('logout'));
+	
 	if($_POST['action']=="command"){
 	 	$post = $DB->Request('post');
 	 	if(substr(strtolower($post['command']),0,1)=="z"){ 
@@ -15,7 +18,7 @@
 
 <td id="content" valign="top">
 
-	<?php $ROUTER->getInclude('submenu'); ?>
+	<?php $ROUTER->getInclude('menu-key'); ?>
 	
 	<div class="left" style="margin: 10px 5px;">	
 									

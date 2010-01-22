@@ -1,4 +1,7 @@
 <?php
+	/* verify session */
+	$ROUTER->getSecurity($LINK->getLink('logout'));
+	
 	if($_POST['command']=='drop_schema' AND !empty($_POST['chk'])){
 	 	$post = $DB->Request('post');	
 		for($x=0; $x<count($post['chk']); $x++){
