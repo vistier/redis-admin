@@ -9,6 +9,6 @@
 	$config['admin']['pass'] = "redis";
 	
 	/* default dir */
-	$config['dir']['home']	 = "/var/www/sites/bligr.com/";
+	$config['dir']['home']	 = "/var/www/readmin-x.x.x/";
 	
 ?>
