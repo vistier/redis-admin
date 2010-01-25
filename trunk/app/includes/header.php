@@ -34,7 +34,7 @@
 		</div>
 		<div style="margin-top: 15px;">
 		<strong>
-		<a href="<?php echo $LINK->getLink('dashboard'); ?>">Home</a> &nbsp;&nbsp;
+		<a href="<?php echo $LINK->getLink('dashboard'); ?>">Dashboard</a> &nbsp;&nbsp;
 		<a href="<?php echo $LINK->getLink('schemas'); ?>">Schemas</a> &nbsp;&nbsp;					
 		<a href="<?php echo $LINK->getLink('command'); ?>">Command</a> &nbsp;&nbsp;					
 		<a href="<?php echo $LINK->getLink('persistence'); ?>">Persistence</a> &nbsp;&nbsp;			
