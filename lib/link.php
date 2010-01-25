@@ -20,7 +20,8 @@
 			if($link=="schemas") return "/schemas";	
 			if($link=="persistence") return "/persistence";											
 			if($link=="keys") return "/keys";						
-			if($link=="help") return "/help";		
+			if($link=="values") return "/values";		
+			if($link=="help") return "/help";					
 
 			if($link=="addkey-string") return "/addkey-string";		
 			if($link=="addkey-list") return "/addkey-list";		

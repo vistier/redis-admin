@@ -24,7 +24,8 @@
 			<div>
 				<div class="left"><strong>Server: </strong><?php echo $_SESSION['REDIS']['HOSTNAME']; ?></div>
 				<div class="left" style="margin: 0 20px;"><strong>Schema: </strong>
-				<?php $DB->select_db(15); ?><?php echo $_SESSION['REDIS']['DATABASE'].', '.$DB->getKeyValue("schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
+				<?php $DB->select_db(15); ?>
+				<?php echo $_SESSION['REDIS']['DATABASE'].', '.$DB->getSingleKeyValue(15, "schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
 				<div class="clear"></div>
 			</div>
 			<div style="padding: 5px 0;"><strong>Monitor: </strong>

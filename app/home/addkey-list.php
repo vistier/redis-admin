@@ -2,10 +2,13 @@
 	/* verify session */
 	$ROUTER->getSecurity($LINK->getLink('logout'));
 	
-	if($_POST['command']=="addkey-list" AND !empty($_POST['key']) AND !empty($_POST['value']) AND !empty($_POST['type'])){
-	 	$post = $DB->Request('post');
+	/* get requests */
+	$post = $DB->Request('post');
+	$get = $DB->Request('get');
+		 	
+	if($post['command']=="addkey-list" AND isset($post['key']) AND isset($post['value']) AND !empty($post['type'])){
 	 	$DB->setNewKey($post);
-		header('location: '.$LINK->getLink('keys'));
+		header('location: '.$LINK->getLink('values').'?key='.$post['key']);
 		exit(0);
 	}
 ?>
@@ -16,7 +19,7 @@
 
 <td id="content" valign="top">
 
-	<div class="widget_title"><?php echo $_SESSION['REDIS']['DATABASE']; ?>, <?php $DB->select_db(15); ?><?php echo $DB->getKeyValue("schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
+	<div class="widget_title"><?php echo $_SESSION['REDIS']['DATABASE']; ?>, <?php echo $DB->getSingleKeyValue(15, "schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
 		
 	<?php $ROUTER->getInclude('menu-key'); ?>
 	
@@ -24,13 +27,13 @@
 									
 		<form action="" method="post">
 		<input type="hidden" name="command" value="addkey-list" />
-		<input type="hidden" name="type" value="list" />			
+		<input type="hidden" name="type" value="list" />				
 		<div id="widget_1" class="widget">
 			<div class="widget_title">Add Key List</div>
 			<table>
 				<tr>
 				<td width="100"><strong>Key: &nbsp;</strong></td>
-				<td><input type="text" name="key" maxlength="30" width="20" /></td>
+				<td><input <?php if($get['key']) echo 'readonly="readonly"'; ?> type="text" name="key" maxlength="30" width="20" value="<?php echo $get['key']; ?>" /></td>
 				</tr>
 				<tr>
 				<td width="100"><strong>Value: &nbsp;</strong></td>

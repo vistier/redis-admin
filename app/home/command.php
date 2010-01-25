@@ -18,7 +18,7 @@
 
 <td id="content" valign="top">
 
-	<div class="widget_title"><?php echo $_SESSION['REDIS']['DATABASE']; ?>, <?php $DB->select_db(15); ?><?php echo $DB->getKeyValue("schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
+	<div class="widget_title"><?php echo $_SESSION['REDIS']['DATABASE']; ?>, <?php echo $DB->getSingleKeyValue(15, "schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
 		
 	<?php $ROUTER->getInclude('menu-key'); ?>
 	

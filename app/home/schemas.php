@@ -27,7 +27,7 @@
 		<tr><td colspan="5"><strong>Schemas</strong></td></tr>
 		
 		<tr>
-		<td><strong></strong></td>
+		<td width="30"></td>
 		<td align="center"><strong>Instance</strong></td>
 		<td><strong>Alias</strong></td>
 		<td align="center"><strong>Size</strong></td>	
@@ -57,8 +57,7 @@
 				<td>
 					<a href="<?php echo $LINK->getLink('keys'); ?>?db=<?php echo $schema_name[2]; ?>" title="db<?php echo $schema_name[2]; ?>">
 					<?php if(!empty($res['keys'][$x])){ ?>
-					<?php $DB->select_db(15); ?>
-					<?php echo $DB->getKeyValue($res['keys'][$x]); ?><?php } ?>
+					<?php echo $DB->getSingleKeyValue(15, $res['keys'][$x]); ?><?php } ?>
 					</a>
 				</td>
 				<td align="center"><?php echo $schema_size; ?></td>					
@@ -68,6 +67,7 @@
 		<tr><td colspan="5">
 			<span class="left">
 			<a href="#" onclick="SetAllCheckBoxes('form', 'chk[]', true); return false; ">Check all</a></span>
+			&nbsp;&nbsp;			
 			<span class="right">			
 			<a href="#" onclick="SetAllCheckBoxes('form', 'chk[]', false); return false; ">Uncheck all</a></span>
 			<span class="clear"></span>			
