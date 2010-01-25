@@ -66,6 +66,10 @@ form, h1, img, p, ul, li {
 	text-align: 	center;
 }
 
+#search {
+	padding: 5px 0 10px 0; 
+}
+
 #widget {
  	background: url('../images/gradiente.jpg') repeat-x;
  	border: 	1px dotted #CCC;
@@ -81,7 +85,7 @@ form, h1, img, p, ul, li {
 }
 
 #content {
-	padding: 	10px;
+	padding: 	5px 10px;
 }
 
 #menu {

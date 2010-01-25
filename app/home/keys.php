@@ -2,19 +2,37 @@
 	/* verify session */
 	$ROUTER->getSecurity($LINK->getLink('logout'));
 	
+	/* return requests */
 	$get = $DB->Request('get');
+	$post = $DB->Request('post');
+	
+	/* define pattern to get keys */
 	if(empty($get['pattern'])){
 		$pattern	=	"all";
 	}elseif(!empty($get['pattern'])){
 	 	$pattern	=	$get['pattern']."*";
 	}
-	if($_POST['command']=="delete_key" AND !empty($_POST['chk'])){
-	 	$post = $DB->Request('post');	
+	
+	/* search keys */
+	if($post['command']=='search_key' AND !empty($post['pattern'])){
+		$pattern	= $post['pattern'];		 	
+	}
+
+	/* delete keys */
+	if($post['command']=="delete_key" AND !empty($post['chk'])){
 		for($x=0; $x<count($post['chk']); $x++){
 			$DB->setDeleteKey($post['chk'][$x]);
 		}
 		$VARS['command']="OK";		
 	}	
+	
+	/* move keys to db */
+	if($post['command']=="move_key" AND !empty($post['chk']) AND !empty($post['db'])){
+		for($x=0; $x<count($post['chk']); $x++){
+			$DB->setMoveKey($post['chk'][$x], $post['db']);
+		}
+		$VARS['command']="OK";		 
+	}
 ?>
 <?php $VARS['meta_title'] 	= "Show Keys"; ?>
 <?php $VARS['header'] 		= true; ?>
@@ -23,12 +41,22 @@
 
 <td id="content" valign="top">
 
+	<div class="widget_title"><?php echo $_SESSION['REDIS']['DATABASE']; ?>, <?php $DB->select_db(15); ?><?php echo $DB->getKeyValue("schema:sid:".$_SESSION['REDIS']['DATABASE']); ?></div>
+		
 	<?php $ROUTER->getInclude('menu-key'); ?>
 	
-	<div class="left" style="margin: 10px 5px;">	
+	<div class="left" style="margin: 0 5px;">	
 									
 		<form action="" method="post" name="form">
-		<input type="hidden" name="command" value="delete_key" />
+		<input type="hidden" name="command" id="command" value="" />
+		
+		<div id="search">
+			Search: &nbsp;
+			<input type="text" name="pattern" size="20" value="<?php echo $post['pattern']; ?>" />
+			<input type="submit" onclick="SubmitForm('form', false, 'search_key');" title="Type a KEY to Search" value="SEARCH" /> &nbsp;	
+			<span class="info">* wildcard</span>
+		</div>
+		
 		<table id="table" width="100%">
 		<tr><td colspan="4"><strong>Keys</strong></td></tr>
 		<tr>
@@ -42,7 +70,7 @@
 				for($x=0; $x<$res['count']; $x++){ ?>
 			<tr>
 				<td>
-					<input type="checkbox" name="chk[]" value="<?php echo $res['keys'][$x]; ?>" />					
+					<input <?php if($_SESSION['REDIS']['DATABASE']==15) echo 'disabled'; ?> type="checkbox" name="chk[]" value="<?php echo $res['keys'][$x]; ?>" />
 				</td>			
 				<td><?php echo $res['keys'][$x]; ?></td>
 				<td>
@@ -67,7 +95,19 @@
 		</table>
 
 		<div style="margin: 5px 2px;">	
-			<input type="image" onclick="if(confirm('DELETE KEY?')){return true;}else{return false;}" src="<?php echo $LINK->getLink('bt-remove'); ?>" title="DELETE KEY" />
+			<input type="submit" onclick="SubmitForm('form', 'DELETE? There is NO undo!','delete_key');" title="DELETE" value="DELETE" /> &nbsp; 
+			Move to:&nbsp;
+			<select name="db"><option value=''>--Select--</option>
+			<?php $res = $DB->getSchemas(); 
+				  for($x=0; $x<$res['count']; $x++){ 
+		 	  	  $schema_name = explode(':', $res['keys'][$x]); ?>	
+				  <?php if( $schema_name[2] != 15 ) { ?>
+				  <option <?php if($post['db']==$schema_name[2]) echo 'selected'; ?> value="<?php echo $schema_name[2]; ?>">
+				  <?php if(!empty($res['keys'][$x])) {?><?php $DB->select_db(15); ?>
+				  <?php echo $DB->getKeyValue($res['keys'][$x]); ?><?php } ?></option>
+				  <?php } ?><?php } ?>	
+			</select>	
+			<input type="submit" onclick="SubmitForm('form', 'MOVE KEYS?','move_key');" title="MOVE" value="MOVE" />				
 		</div>
 		</form>	
 		
