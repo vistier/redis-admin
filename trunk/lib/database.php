@@ -59,6 +59,10 @@
 		 	$this->select_db(15); 
 		 	return $this->delete('schema:sid:'.$dbid);		 	
 		}
+		
+		function setMoveKey($key, $dbid){
+		 	return $this->move($key, $dbid);		 	
+		}		
 
 		function setNewKey($post){
 		 	$post['key']=$this->getSlug($post['key']);
@@ -127,9 +131,10 @@
 				for($xx=0; $xx<count($rows['keys']); $xx++){
 				  	if(!empty($rows['keys'][$xx])){
 						$keys['keys'][] = $rows['keys'][$xx];
-						$numrows++;			
+						$numrows++;									
 					}
 				}
+				if($numrows==30) break;
 			}
 			$keys['count'] = $numrows;
 			return $keys;		 

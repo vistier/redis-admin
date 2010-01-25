@@ -4,7 +4,7 @@
 
 		<li>
 		<a href="<?php echo $LINK->getLink('keys'); ?>?db=15" title="db15">
-		<?php echo $DB->getKeyValue('schema:sid:15'); ?></a>
+		<?php echo '15, '.$DB->getKeyValue('schema:sid:15'); ?></a>
 		</li>		
 		
 		<?php $res = $DB->getSchemas(); 
@@ -17,7 +17,7 @@
 				<a href="<?php echo $LINK->getLink('keys'); ?>?db=<?php echo $schema_name[2]; ?>" title="db<?php echo $schema_name[2]; ?>">
 				<?php if(!empty($res['keys'][$x])) {?>
 				<?php $DB->select_db(15); ?>
-				<?php echo $DB->getKeyValue($res['keys'][$x]); ?>
+				<?php echo $schema_name[2].', '.$DB->getKeyValue($res['keys'][$x]); ?>
 				<?php } ?>
 				</a>
 				<?php if($schema_name[2]==$_SESSION['REDIS']['DATABASE']) {?></strong><?php } ?>

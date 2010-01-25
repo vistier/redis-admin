@@ -13,3 +13,17 @@ function SetAllCheckBoxes(FormName, FieldName, CheckValue)
 		for(var i = 0; i < countCheckBoxes; i++)
 			objCheckBoxes[i].checked = CheckValue;
 }
+
+function SubmitForm(form, msg, action){
+ 	if(msg){
+	 	if(confirm(msg)){
+	 	 	document.getElementById('command').value = action;
+	 	 	document.forms[form].submit();
+		}else{
+		 	return false;
+		}
+	}else{
+ 	 	document.getElementById('command').value = action;	 
+		document.forms[form].submit();
+	}
+}
