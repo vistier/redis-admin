@@ -88,7 +88,7 @@
 			$command = $this->command($cmd); 
 			return $command;
 		}
-						
+									
 		function getSchemas(){
 			global $_SESSION;
 			$this->select_db(15);
@@ -104,15 +104,57 @@
 			return $res;
 		}
 		
-		function getKeyValue($key){
+		function getKeyValue($key, $offset=false, $limit=false){
+		 	global $_SESSION;
+			$this->select_db($_SESSION['REDIS']['DATABASE']);		 	
+		 	$type = $this->type($key);
+		 	if($type=='string'){
+				$res = $this->get($key);
+			 	$rows['keys'][] = $res;				
+			}
+		 	if($type=='list'){
+			  	$res = $this->lrange($key, $offset, $limit);
+			 	$rows['keys'] = $res;				  	
+			}	
+		 	if($type=='set'){
+			  	$res = $this->smembers($key);
+			 	$rows['keys'] = $res;				  				  	
+			}
+		 	if($type=='zset'){
+			  	$res = $this->zrange($key, $offset, $limit);
+			 	$rows['keys'] = $res;				  				  	
+			}
+		 	$rows['count'] = count($rows['keys']);
+			return $rows;
+		}
+		
+		function getSingleKeyValue($db, $key){	
+			$this->select_db($db);		 	 
 		 	$type = $this->type($key);
 		 	if($type=='string') $res = $this->get($key);
-		 	if($type=='list') $res = $this->llen($key).' rows';	
-		 	if($type=='set') $res = $this->scard($key).' elements';
-		 	if($type=='zset') $res = $this->zcard($key).' elements';		 	
-			return $res;
+		 	if($type=='list') $res = $this->llen($key);	
+		 	if($type=='set') $res = $this->scard($key);
+		 	if($type=='zset') $res = $this->zcard($key);
+		 	return $res;
 		}
 
+		function getKeyExists($key){
+			return $this->exists($key); 
+		}
+		
+		function getType($key){
+			return $this->type($key); 
+		}		
+		
+		function getNumElements($key){
+		 	$type = $this->type($key);
+		 	if($type=='string') $res = '1';
+		 	if($type=='list') $res = $this->llen($key);	
+		 	if($type=='set') $res = $this->scard($key);
+		 	if($type=='zset') $res = $this->zcard($key);		 	
+			return $res;
+		}
+		
 		function getSchemaKeys($pattern){
 			global $_SESSION;
 			if($pattern=='all'){
