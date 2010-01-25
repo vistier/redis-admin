@@ -1,0 +1,11 @@
+_Sorted Sets commands_
+
+Sorted Sets is not supported yet.
+
+_DB instances_
+
+Only 15 DB instances (from 0 to 14) can be created. The DB15 instance is reserved to ReAdmin info_schema.
+
+_Show All Keys_
+
+Only 30 keys are listed in Show Keys page. Use Search Key form to find and view others keys.
