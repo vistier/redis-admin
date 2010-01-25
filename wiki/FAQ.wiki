@@ -19,4 +19,5 @@ _2.2 DB instances_
 Only 15 DB instances (from 0 to 14) can be created. The DB15 instance is reserved to ReAdmin info_schema.
 
 _2.3 Show All Keys_
-Only 30 keys are listed on page Show Keys. Use Search Key form to view others keys.
+
+Only 30 keys are listed in Show Keys page. Use Search Key form to find and view others keys.
