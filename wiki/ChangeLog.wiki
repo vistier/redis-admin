@@ -1,6 +1,6 @@
 * Version 0.0.6 Test *
 
-Show key values. Show list elements. Show set elements. Edit key string values. Sub-directory fix. Htaccess auto-create. Code optimization. 
+Show key string values. Show list elements. Show set elements. Edit key string values. Sub-directory fix. Htaccess auto-create. Code optimization. 
 
 * Version 0.0.5 Test *
 
