@@ -175,6 +175,7 @@
 						$keys['keys'][] = $rows['keys'][$xx];
 						$numrows++;									
 					}
+					if($numrows==30) break;
 				}
 				if($numrows==30) break;
 			}

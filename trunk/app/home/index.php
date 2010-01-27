@@ -1,5 +1,4 @@
 <?php
-
 	if(!empty($_SESSION['REDIS']['HOSTNAME'])){
 		header("HTTP/1.1 301 Moved Permanently"); 
 		header('location: '.$LINK->getLink('dashboard'));
