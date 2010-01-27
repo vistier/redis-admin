@@ -1,6 +1,6 @@
 <?php
 	/* verify session */
-	$ROUTER->getSecurity($LINK->getLink('logout'));
+	//$ROUTER->getSecurity($LINK->getLink('logout'));
 	
 	if($_POST['command']=='create_schema' AND !empty($_POST['schema'])){
 	 	$post = $DB->Request('post');	

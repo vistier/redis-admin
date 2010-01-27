@@ -2,7 +2,7 @@
 
 	session_start();
 	
-	header("Content-Type: text/html; charset=ISO-8859-1");
+	header("Content-Type: text/html; charset=UTF-8");
 		 
 	/* essentials includes */			 
 	include('functions.php');
@@ -12,19 +12,24 @@
 	$DB 	=& new Database;	
 	$LINK	=& new Link;	
 	$ROUTER =& new Router;
-	
+		
+	/* generate .htaccess */
+	$ROUTER->setHtaccess();
+		
 	/* return $_GET */
 	$get = $DB->Request('get');
 	
-	/* create Default Schema */
+	/* create default schema */
 	$DB->setDefaultSchema($get);
 	$DB->select_db($_SESSION['REDIS']['DATABASE']);
 	
 	/* set default vars */
 	$VARS['info'] = $DB->info();
 	$VARS['uri'] = $ROUTER->getURI();
-	
-	/* include a Controller */
+		
+	/* include controller */
 	$ROUTER->getController();			
+	
+	echo "<!-- ".$LINK->getRootHome()." -->";
 	
 ?>

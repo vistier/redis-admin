@@ -8,7 +8,6 @@
 <link rel="shortcut icon" href="<?php echo $LINK->getLink('favicon'); ?>" type="image/x-icon" /> 
 <link rel="stylesheet" href="<?php echo $LINK->getLink('css'); ?>" type="text/css" media="screen" />
 <script src="<?php echo $LINK->getLink('js'); ?>" type="text/javascript"></script>
-<script src="<?php echo $LINK->getLink('jquery'); ?>" type="text/javascript"></script>
 </head>
 <body>
 
