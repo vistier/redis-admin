@@ -97,7 +97,7 @@
 			
 			<div style="padding: 5px;">
 				<div class="left"><strong>Redis Admin Version:</strong></div>
-				<div class="right"><?php echo '0.0.6' ?></div>
+				<div class="right"><?php echo '0.0.7' ?></div>
 				<div class="clear"></div>
 			</div>		
 	

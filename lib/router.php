@@ -15,7 +15,7 @@
 		function setHtaccess(){
 			global $LINK, $_SESSION;
 			if(empty($_SESSION['REDIS']['HOSTNAME'])){
-				if($handle = fopen(".htaccess", "w")){
+				if($handle = @fopen(".htaccess", "w")){
 				$content = "<IfModule mod_rewrite.c>
 				RewriteEngine On
 				RewriteBase {$LINK->getRootHome()}

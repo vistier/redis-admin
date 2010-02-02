@@ -60,6 +60,14 @@
 		 	return $this->delete('schema:sid:'.$dbid);		 	
 		}
 		
+		function setIncr($key, $amount){
+			return $this->incr($key, $amount);	
+		}
+			
+		function setDecr($key, $amount){
+			return $this->decr($key, $amount);	
+		}
+					
 		function setMoveKey($key, $dbid){
 		 	return $this->move($key, $dbid);		 	
 		}		

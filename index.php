@@ -28,8 +28,6 @@
 	$VARS['uri'] = $ROUTER->getURI();
 		
 	/* include controller */
-	$ROUTER->getController();			
-	
-	echo "<!-- ".$LINK->getRootHome()." -->";
+	$ROUTER->getController();
 	
 ?>
