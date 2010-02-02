@@ -4,6 +4,7 @@
 	
 	/* return requests */
 	$get = $DB->Request('get');
+	$post = $DB->Request('post');		
 	
 	/* verify key exists */
 	if(!empty($get['key'])){
@@ -16,6 +17,36 @@
 		}
 	}	
 	
+	/* define post amount */
+	if(empty($post['amount'])){
+		$post['amount'] = 10;
+	}
+	
+	/* define post key as key */
+	if(!empty($post['key'])){
+		$key = $post['key'];	
+	}
+	
+	/* incr keys */
+	if($post['command']=="incr_key" AND !empty($key)){
+		$DB->setIncr($key, 1);
+		$VARS['command']="OK";
+	}	
+		
+	/* decr keys */
+	if($post['command']=="decr_key" AND !empty($key)){
+		$DB->setDecr($key, 1);
+		$VARS['command']="OK";
+	}	
+	
+	/* incr or decr by keys */
+	if($post['command']=="incr_decr_by" AND !empty($post['amount']) AND !empty($post['incr_decr_by']) AND !empty($key)){
+		if($post['incr_decr_by']=='incr_by') $DB->setIncr($key, $post['amount']);		
+		if($post['incr_decr_by']=='decr_by') $DB->setDecr($key, $post['amount']);
+		$VARS['command']="OK";
+	}		
+		
+		
 	/* delete keys */
 	if($post['command']=="delete_key" AND !empty($post['chk'])){
 		for($x=0; $x<count($post['chk']); $x++){
@@ -47,7 +78,8 @@
 									
 		<form action="" method="post" name="form">
 		<input type="hidden" name="command" id="command" value="" />
-		
+		<input type="hidden" name="key" id="key" value="<?php echo $key; ?>" />
+				
 		<table id="table" width="100%">
 		<tr><td colspan="3"><strong><?php echo $key; ?></strong></td></tr>
 		<tr>
@@ -85,10 +117,22 @@
 		<div style="margin: 5px 2px;">	
 		
 			<?php if($DB->getType($key)=='string'){ ?>
-			<input type="submit" onclick="SubmitForm('form', 'DEL KEY? There is NO undo!','delete_key');" title="DEL" value="DEL" />
-			<?php } ?>
-						
-			&nbsp;	
+			<input type="submit" onclick="SubmitForm('form', 'DEL KEY? There is NO undo!','delete_key');" title="DEL" value="DEL" />			
+			<input type="submit" onclick="SubmitForm('form', 'INCR KEY?','incr_key');" title="INCR" value="INCR" />	
+			<input type="submit" onclick="SubmitForm('form', 'DECR KEY?','decr_key');" title="DECR" value="DECR" />	
+			&nbsp;			
+									
+			<select name="incr_decr_by">
+			<option>--Select--</option>
+			<option <?php if($post['incr_decr_by']=='incr_by') echo "selected"; ?> value="incr_by">INCR BY</option>			
+			<option <?php if($post['incr_decr_by']=='decr_by') echo "selected"; ?> value="decr_by">DECR BY</option>			
+			</select>
+			<input type="text" name="amount" size="4" id="amount" value="<?php echo $post['amount']; ?>" />
+			<input type="submit" onclick="SubmitForm('form', 'INCR OR DECR BY KEY?','incr_decr_by');" title="OK" value="OK" />			
+			&nbsp;			
+			
+			<?php } ?>							
+			
 		</div>
 		</form>	
 		
