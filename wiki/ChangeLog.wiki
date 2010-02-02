@@ -1,3 +1,7 @@
+* Version 0.0.7 Test *
+
+INCR, DECR, INCR BY and DECR BY. Code Optimization. 
+
 * Version 0.0.6 Test *
 
 Show key string values. Show list elements. Show set elements. Edit key string values. Sub-directory fix. Htaccess auto-create. Code optimization. 
